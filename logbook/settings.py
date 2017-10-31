@@ -25,7 +25,7 @@ SECRET_KEY = 'i%06y2q&4l-!nv*8oolv470b!o)!xg*^9f7^d=q10#b$wd%c_e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['team35webapp.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -106,4 +106,4 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
 
-ALLOWED_HOSTS = ['team35webapp.azurewebsites.net']
+
