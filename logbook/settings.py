@@ -25,7 +25,13 @@ SECRET_KEY = 'i%06y2q&4l-!nv*8oolv470b!o)!xg*^9f7^d=q10#b$wd%c_e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['team35webapp.azurewebsites.net','localhost', '127.0.0.1']
-ADMINS('Wanyue', 'rosettawanyuezhang@gmail.com')
+# Set up django mail
+MAILER_LIST = ['rosettawanyuezhang@gmail.com']
+EMAIL_HOST = ['http://team35webapp.azurewebsites.net/']
+EMAIL_HOST_USER = 'team35admin'
+EMAIL_HOST_PASSWORD = 'WanyueIonutSergio2017'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
