@@ -25,6 +25,7 @@ SECRET_KEY = 'i%06y2q&4l-!nv*8oolv470b!o)!xg*^9f7^d=q10#b$wd%c_e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = ['team35webapp.azurewebsites.net','localhost', '127.0.0.1']
+
 # Set up django mail
 MAILER_LIST = ['rosettawanyuezhang@gmail.com']
 EMAIL_HOST = ['http://team35webapp.azurewebsites.net/']
@@ -45,7 +46,7 @@ INSTALLED_APPS = [
     'logbook.core',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
