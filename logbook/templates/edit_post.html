@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Sign up</h2>
+  <h2>Create Post</h2>
   <form method="post">
     {% csrf_token %}
-    {% for field in signup_form %}
+    {% for field in post_form %}
       <p>
         {{ field.label_tag }}<br>
         {{ field }}
@@ -16,6 +16,11 @@
         {% endfor %}
       </p>
     {% endfor %}
-    <button type="submit">Sign up</button>
+    <button type="submit">Submit</button>
   </form>
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'view_categories' %}">View Categories</a>
+  <a href="{% url 'view_posts' %}">View Posts</a>
+  <a href="{% url 'create_post' %}">Create a post</a>
+  <a href="{% url 'create_category' %}">Create a category</a>
 {% endblock %}

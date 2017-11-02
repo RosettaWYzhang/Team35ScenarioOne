@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Log in to Team 35 Logbook</h2>
+  <h2>Log in to Team 38 Logbook</h2>
   {% if form.errors %}
     <p style="color: red">Your username and password didn't match. Please try again.</p>
   {% endif %}
@@ -21,6 +21,6 @@
       </p>
     {% endfor %}
     <button type="submit">Log in</button>
-    <a href="{% url 'signup' %}">New to Team 35 Logbook? Sign up!</a>
+    <a href="{% url 'signup' %}">New to Team 38 Logbook? Sign up</a>
   </form>
 {% endblock %}

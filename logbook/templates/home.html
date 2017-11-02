@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
+{% block title %}Welcome to TEAM 38 LOGBOOK{% endblock %}
 
 {% block content %}
-  <h2>Welcome, {{ user.get_full_name }} <small>{{ user.username }}</small>!</h2>
+  <h2>Welcome, {{ user.get_full_name }}!</h2>
   <p>Your email address: {{ user.email }}</p>
+    
+    <a href="{% url 'view_categories' %}">View Categories</a>
+    <a href="{% url 'view_posts' %}">View Posts</a>
+    <a href="{% url 'create_post' %}">Create a post</a>
+    <a href="{% url 'create_category' %}">Create a category</a>
 {% endblock %}
