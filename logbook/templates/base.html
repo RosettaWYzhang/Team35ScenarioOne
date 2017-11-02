@@ -6,25 +6,28 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <title class="text-center">{% block title %}Team 38 Logbook{% endblock %}</title>
+    <title>{% block title %}Team 38 Logbook{% endblock %}</title>
   </head>
 
-  <body class="text-center">
+  <body>
     <header>
-      <h1 class="text-center">TEAM 38 LOGBOOK</h1>
-      <form id="searchform" action="{% url 'search_post' %}" method="get" accept-charset="utf-8">
-      <button class="searchbutton" type="submit">
-        Search
-      </button>
-      <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Post">
-      <p>
-      {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}">logout</a>
-      {% else %}
-        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-      {% endif %}
-      <hr>
-    </header>
+      <div class="jumbotron">
+        <h3>TEAM 38 LOGBOOK</h3>
+            <!--<form id="searchform" action="{% url 'search_post' %}" method="get" accept-charset="utf-8">
+              <button class="searchbutton" type="submit">
+                Search
+              </button>
+              <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Post">
+              <p>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">logout</a>
+                {% else %}
+                <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+                {% endif %}
+                <hr>-->
+          </div>
+      </header>
+
     <main>
       {% block content %}
       {% endblock %}

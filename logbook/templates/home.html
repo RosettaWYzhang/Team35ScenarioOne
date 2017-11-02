@@ -2,10 +2,12 @@
 {% block title %}Welcome to TEAM 38 LOGBOOK{% endblock %}
 
 {% block content %}
+<div class="text-center">
   <h2>Welcome, {{ user.get_full_name }}!</h2>
   <p>Your email address: {{ user.email }}</p>
-    <a href="{% url 'view_categories' %}">View Categories</a>
-    <a href="{% url 'view_posts' %}">View Posts</a>
-    <a href="{% url 'create_post' %}">Create a post</a>
-    <a href="{% url 'create_category' %}">Create a category</a>
+    <a style="margin-left:5px" href="{% url 'view_categories' %}">View Categories</a>
+    <a style="margin-left:5px" href="{% url 'view_posts' %}">View Posts</a>
+    <a style="margin-left:5px" href="{% url 'create_post' %}">Create a post</a>
+    <a style="margin-left:5px" href="{% url 'create_category' %}">Create a category</a>
+  </div>
 {% endblock %}
