@@ -25,7 +25,7 @@ SECRET_KEY = '0k0x7+h(ict-br3$brogj7ta^#$3a9ggqoh7o_@_b7wc7x9#f4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['team35webapp.azurewebsites.net','localhost', '127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'logbook.core',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
