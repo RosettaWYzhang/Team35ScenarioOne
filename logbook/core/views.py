@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from logbook.core.forms import SignUpForm, EntryForm, CategoryForm
 from django.views.generic import DeleteView
 from django.core import urlresolvers
+from django.utils import timezone
 
 
 @login_required
@@ -43,12 +44,14 @@ def create_post(request):
     if request.method == 'POST':
         post_form = EntryForm(request.POST)
         if post_form.is_valid():
-            post_form.save()
-            title = post_form.cleaned_data.get('title')
-            slug = post_form.cleaned_data.get('slug')
-            body = post_form.cleaned_data.get('body')
-            url = post_form.cleaned_data.get('url')
-            category = post_form.cleaned_data.get('category')
+            post = post_form.save()
+            post.title = post_form.cleaned_data.get('title')
+            post.slug = post_form.cleaned_data.get('slug')
+            post.body = post_form.cleaned_data.get('body')
+            post.url = post_form.cleaned_data.get('url')
+            post.category = post_form.cleaned_data.get('category')
+            post.date = timezone.now()
+            post.save()
             return redirect('home')
     else:
         post_form = EntryForm()

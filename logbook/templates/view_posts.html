@@ -1,18 +1,27 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-  <h2>List of all Posts</h2>
+<div class="text-center">
+    <form id="searchform" action="{% url 'search_post' %}" method="get" accept-charset="utf-8">
+        <button class="searchbutton btn btn-success" type="submit">
+            Search
+        </button>
+        <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Post">
+    </form>
+  <h2>List of all posts</h2>
     {% if posts %}
-        <ul>
         {% for post in posts %}
-            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a><br>
         {% endfor %}
-        </ul>
+
     {% else %}
         <p>There are no posts.</p>
     {% endif %}
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'view_categories' %}">View Categories</a>
-    <a href="{% url 'create_post' %}">Create a post</a>
-    <a href="{% url 'create_category' %}">Create a category</a>
+    <div style="margin-top:50px" >
+    <a style="margin-left:5px" href="{% url 'home' %}">Home</a>
+    <a style="margin-left:5px" href="{% url 'view_categories' %}">View Categories</a>
+    <a style="margin-left:5px" href="{% url 'create_post' %}">Create a post</a>
+    <a style="margin-left:5px" href="{% url 'create_category' %}">Create a category</a>
+   </div>
+</div>
 {% endblock %}

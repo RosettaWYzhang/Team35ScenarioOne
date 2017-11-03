@@ -1,7 +1,9 @@
 from django.conf.urls import url, include
 from django.contrib.auth import views as auth_views
-
 from logbook.core import views as core_views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -18,4 +20,4 @@ urlpatterns = [
     url(r'^edit_post/(?P<slug>[\w-]+)/$', core_views.edit_post , name='edit_post'),
     url(r'^view_post/(?P<slug>[\w-]+)/delete/$', core_views.delete_post , name='delete_post'),
     url(r'^search_post/$', core_views.search_post , name='search_post'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
