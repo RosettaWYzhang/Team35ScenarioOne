@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block head_title %}{{ post.title }}{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+
+
+{% block content %}
+    <div class="text-center">
+    {{ post.body }}
+
+    <form action="{% url 'delete_post' post.slug %}" method="post">
+    {% csrf_token %}
+    <input type="submit" style="margin-top:15px" class="btn btn-danger" value="Delete" /></form>
+    <form action="{% url 'edit_post' post.slug %}" method="post">
+    {% csrf_token %}
+    <input type="submit" style="margin-top:15px" class="btn btn-success" value="Edit" /></form>
+    <div style="margin-top:15px">
+    <a style="margin-left:5px" href="{% url 'home' %}">Home</a>
+    <a style="margin-left:5px" href="{% url 'view_categories' %}">View Categories</a>
+    <a style="margin-left:5px" href="{% url 'view_posts' %}">View Posts</a>
+    <a style="margin-left:5px" href="{% url 'create_post' %}">Create a post</a>
+    <a style="margin-left:5px" href="{% url 'create_category' %}">Create a category</a>
+</div>
+</div>
+{% endblock %}

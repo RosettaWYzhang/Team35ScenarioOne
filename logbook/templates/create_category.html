@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+  <h2>Create Category</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in category_form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button class="btn btn-success" type="submit">Submit</button>
+  </form>
+  <div style="margin-top:15px">
+  <a style="margin-left:5px" href="{% url 'home' %}">Home</a>
+  <a style="margin-left:5px" href="{% url 'view_categories' %}">View Categories</a>
+  <a style="margin-left:5px" href="{% url 'view_posts' %}">View Posts</a>
+  <a style="margin-left:5px" href="{% url 'create_post' %}">Create a post</a>
+</div>
+</div>
+{% endblock %}

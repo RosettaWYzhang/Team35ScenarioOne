@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+  <h2>List of all Posts</h2>
+    {% if posts %}
+        <ul>
+        {% for post in posts %}
+            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no posts.</p>
+    {% endif %}
+    <a style="margin-left:5px" href="{% url 'home' %}">Home</a>
+    <a style="margin-left:5px" href="{% url 'view_categories' %}">View Categories</a>
+    <a style="margin-left:5px" href="{% url 'create_post' %}">Create a post</a>
+    <a style="margin-left:5px" href="{% url 'create_category' %}">Create a category</a>
+</div>
+{% endblock %}
