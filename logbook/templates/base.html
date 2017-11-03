@@ -18,13 +18,8 @@
                 Search
               </button>
               <input class="searchfield" id="searchbox" name="q" type="text" placeholder="Search Post">
-              <p>
-                {% if user.is_authenticated %}
-                <a href="{% url 'logout' %}">logout</a>
-                {% else %}
-                <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
-                {% endif %}
-                <hr>-->
+            </form>-->
+
                 {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}">logout</a>
                 {% else %}
@@ -36,7 +31,6 @@
     <main>
       {% block content %}
       {% endblock %}
-    </form>
     </main>
   </body>
 </html>
